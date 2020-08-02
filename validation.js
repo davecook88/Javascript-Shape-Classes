@@ -1,6 +1,6 @@
 const RC = {
   is_string: function(str) {
-    if (isString(str)){
+    if (typeof str === 'string'){
       return this.success;
     } else {
       return this.failure;
@@ -15,14 +15,14 @@ const RC = {
     return this.failure;
   },
   is_number: function(n){
-    if(isNumber(n)){
+    if(typeof n === "number"){
       return this.success;
     } else {
       return this.failure;
     }
   },
   is_object: function(o){
-    if (isObject(o)){
+    if (typeof o === "object"){
       return this.success;
     } else {
       return this.failure;
