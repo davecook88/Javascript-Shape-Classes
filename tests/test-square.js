@@ -1,4 +1,4 @@
-const Square = require("../Square");
+const Square = require("../Square.js");
 
 function testSquare(square) {
   let call_result = {};
@@ -53,7 +53,7 @@ function testSquare(square) {
   square.printValues();
 }
 
-const square = new SQuare();
+const square = new Square();
 testSquare(square);
 
 module.exports = testSquare;

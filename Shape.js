@@ -24,20 +24,11 @@ class Shape {
         debug_data: debug_data,
       };
     }
-
+    // validate inputs
     if (attributes.hasOwnProperty("length")) {
       CI.setLength(attributes.length);
     }
     if (attributes.hasOwnProperty("color")) {
-      call_result = RC.is_hex_color(attributes.color);
-      if (call_result !== RC.success) {
-        return_msg += "invalid color attribute ";
-        return {
-          success: RC.failure,
-          return_msg: return_msg,
-          debug_data: debug_data,
-        };
-      }
       CI.setColor(attributes.color);
     }
 
@@ -114,14 +105,15 @@ class Shape {
   }
 
   printValues() {
+    const CI = this;
     let call_result = {};
-    call_result = this.getLength();
+    call_result = CI.getLength();
     console.log("length: " + call_result.length);
-    call_result = this.getColor();
+    call_result = CI.getColor();
     console.log("color: " + call_result.color);
-    call_result = this.getType();
+    call_result = CI.getType();
     console.log("type: " + call_result.type);
-    call_result = this.calculateArea();
+    call_result = CI.calculateArea();
     if (call_result.area) {
       console.log("area: " + call_result.area);
     }

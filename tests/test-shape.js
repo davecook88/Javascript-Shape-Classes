@@ -1,4 +1,4 @@
-const Shape = require("./Shape");
+const Shape = require("../Shape");
 
 function testShape(shape) {
   let call_result = {};
