@@ -24,18 +24,19 @@ function testCircle(circle) {
   } else {
     console.log("circle has no length");
   }
-
-  if (circle.hasOwnProperty("print_values")) {
-    circle.print_values;
+  // Check printValues() method
+  if (circle.hasOwnProperty("printValues")) {
+    circle.printValues();
   }
 
   const initialize_dictionary = {
     length: 20,
     color: "#0000ff",
   };
-
+  
   call_result = circle.initialize(initialize_dictionary);
   console.log("initialize result", call_result);
+  // Compare length in rectangle object with value passed into initialize method
   if (circle.IV_length === initialize_dictionary.length) {
     console.log("circle length initialized correctly");
   } else {
@@ -43,6 +44,7 @@ function testCircle(circle) {
     console.log("initializer length", initialize_dictionary.length);
     console.log("IV_length", circle.IV_length);
   }
+  // Compare color in rectangle object with value passed into initialize method
   if (circle.IV_color === initialize_dictionary.color) {
     console.log("circle color initialized correctly");
   } else {

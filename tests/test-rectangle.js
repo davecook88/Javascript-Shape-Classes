@@ -25,8 +25,14 @@ function testRectangle(rectangle) {
     console.log("rectangle has no length");
   }
 
-  if (rectangle.hasOwnProperty("print_values")) {
-    rectangle.print_values;
+  if (rectangle.hasOwnProperty("IV_width")) {
+    console.log("rectangle width:", rectangle.IV_width);
+  } else {
+    console.log("rectangle has no width");
+  }
+  // Check printValues() method
+  if (rectangle.hasOwnProperty("printValues")) {
+    rectangle.printValues();
   }
 
   const initialize_dictionary = {

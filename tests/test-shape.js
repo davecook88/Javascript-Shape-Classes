@@ -6,7 +6,7 @@ function testShape(shape) {
     console.log("shape was not created");
     return;
   }
-  // check initialize function assigns all values
+  // check constructor function assigns all values
   if (shape.CV_type) {
     console.log("shape type:", shape.CV_type);
   } else {
@@ -18,15 +18,15 @@ function testShape(shape) {
   } else {
     console.log("shape has no color");
   }
-
+  
   if (shape.hasOwnProperty("IV_length")) {
     console.log("shape length:", shape.IV_length);
   } else {
     console.log("shape has no length");
   }
-
-  if (shape.hasOwnProperty("print_values")) {
-    shape.print_values;
+  // Check printValues() method
+  if (shape.hasOwnProperty("printValues")) {
+    shape.printValues();
   }
 
   const initialize_dictionary = {
@@ -36,6 +36,7 @@ function testShape(shape) {
 
   call_result = shape.initialize(initialize_dictionary);
   console.log("initialize result", call_result);
+  // Compare length in object with value passed into initialize method
   if (shape.IV_length === initialize_dictionary.length) {
     console.log("shape length initialized correctly");
   } else {
@@ -43,6 +44,8 @@ function testShape(shape) {
     console.log("initializer length", initialize_dictionary.length);
     console.log("IV_length", shape.IV_length);
   }
+
+  // Compare color in object with value passed into initialize method
   if (shape.IV_color === initialize_dictionary.color) {
     console.log("shape color initialized correctly");
   } else {

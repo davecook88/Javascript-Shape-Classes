@@ -6,7 +6,7 @@ function testSquare(square) {
     console.log("square was not created");
     return;
   }
-  // check initialize function assigns all values
+  // check constructor function assigns all values
   if (square.CV_type) {
     console.log("square type:", square.CV_type);
   } else {
@@ -24,9 +24,9 @@ function testSquare(square) {
   } else {
     console.log("square has no length");
   }
-
-  if (square.hasOwnProperty("print_values")) {
-    square.print_values;
+  // Check printValues() method
+  if (square.hasOwnProperty("print")) {
+    square.printValues();
   }
 
   const initialize_dictionary = {
